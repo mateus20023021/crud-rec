@@ -19,6 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get(
+    '/index',
+    [UsersController::class, 'index']
+);
+
+Route::get(
     '/usuarios/novo', 
     [UsersController::class, 'create']
 );

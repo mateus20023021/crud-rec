@@ -7,6 +7,12 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
+    public function index(){
+        $users = User::all();
+
+        return view('users.index', compact('users'));
+    }
+
     public function create()
     {
         return view('users.create');
@@ -20,7 +26,9 @@ class UsersController extends Controller
             'password' => $request->pwd,
         ]);
 
-        return "Operação realizada com sucesso!";
+        echo "Usuário criado com sucesso!";
+
+        return view('welcome');
     }
 
     public function show($id)
@@ -53,7 +61,9 @@ class UsersController extends Controller
             'password' => $request->pwd,
         ]);
 
-        return "Operação realizada com sucesso!";
+        echo "Usuário atualizado com sucesso!";
+
+        return view('welcome');
     }
 
     public function delete($id)
@@ -72,6 +82,8 @@ class UsersController extends Controller
 
         $user->delete();
 
-        return "Operação realizada com sucesso!";
+        echo "Usuário deletado com sucesso!";
+
+        return view('welcome');
     }
 }
