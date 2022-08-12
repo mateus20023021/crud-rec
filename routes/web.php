@@ -51,4 +51,4 @@ Route::get(
 Route::post(
     '/usuarios/deletar/{id}',
     [UsersController::class, 'destroy']
-);
+) -> name('delete_user');

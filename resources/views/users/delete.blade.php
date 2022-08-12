@@ -6,11 +6,11 @@
         <title>Deletar Usuário</title>
     </head>
     <body>
-        <form action="{{ route('update_user', ['id' => $user->id]) }}" method="POST">
+        <form action="{{ route('delete_user', ['id' => $user->id]) }}" method="POST">
             @csrf
             <label for="">Deseja deletar o usuário?</label><br/>
             <input type="text" name="name" value="{{ $user->name }}"><br/>
-            <input type="submit">Sim</input>
+            <input type="submit" value="Sim">
         </form>
     </body>
 </html>
